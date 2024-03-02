@@ -18,7 +18,7 @@ const signUpForm = z.object({
 type SignUpForm = z.infer<typeof signUpForm>;
 
 export const SignUp = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const {
     register,
@@ -28,15 +28,12 @@ export const SignUp = () => {
 
   async function handleSignUp(data: SignUpForm) {
     try {
-      console.log(data);
-
       await new Promise((resolve) => setTimeout(resolve, 2000));
       toast.success("Restaurante cadastrado com sucesso!", {
-       action: {
-           label: 'Login',
-        onClick: () => navigate('/sign-in')
-       } 
-
+        action: {
+          label: "Login",
+          onClick: () => navigate("/sign-in"),
+        },
       });
     } catch (e) {
       toast.error(`Error:${e} Algo deu errado, Tente novamente`, {
