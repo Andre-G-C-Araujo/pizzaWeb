@@ -1,6 +1,7 @@
 import { Label } from "@radix-ui/react-label";
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import { z } from "zod";
 
@@ -24,10 +25,8 @@ export const SignIn = () => {
     try {
       console.log(data);
 
-      throw new Error();
-
-      // await new Promise((resolve) => setTimeout(resolve, 2000));
-      // toast.success("Enviamos um link de autenticaçao para seu e-mail");
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+      toast.success("Enviamos um link de autenticaçao para seu e-mail");
     } catch (e) {
       toast.error(`Error:${e} Algo deu errado, Tente novamente`, {
         action: {
@@ -41,6 +40,11 @@ export const SignIn = () => {
   return (
     <>
       <Helmet title="Login" />
+      <Button variant={"link"} asChild className="absolute right-8 top-8">
+        <Link to="/sign-up" className="">
+          Novo estabelicimento
+        </Link>
+      </Button>
       <div className="p-8">
         <div className="flex w-[350px] flex-col justify-center gap-6">
           <div className="flex flex-col gap-2 text-center">
