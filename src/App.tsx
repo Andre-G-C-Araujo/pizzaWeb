@@ -1,10 +1,10 @@
-import { Button } from "./components/ui/button";
 import "./global.css";
+import { Button } from "./components/ui/button";
 
 export const App = () => {
   return (
-    <div className="flex justify-center items-center h-screen">
-      <Button>Enviar</Button>
+    <div className="flex items-center justify-center h-screen">
+      <Button>Entrar</Button>
     </div>
   );
 };
