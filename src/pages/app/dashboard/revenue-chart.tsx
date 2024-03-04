@@ -82,6 +82,8 @@ export const RevenueChart = () => {
               dataKey="revenue"
               stroke={colors.violet["600"]}
             />
+
+            <CartesianGrid vertical={false} className="stroke-muted" />
           </LineChart>
         </ResponsiveContainer>
       </CardContent>
